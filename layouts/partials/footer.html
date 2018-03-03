@@ -3,26 +3,27 @@
             {{ if .Site.Params.github }}
             <div class="col-xs-3 col-md-2"><a href="https://github.com/{{ .Site.Params.github }}">GitHub</a></div>
             {{ end }}
-            {{ if .Site.Params.linkedin }}
+            {{ if .Site.Params.linkedin }} 
             <div class="col-xs-3 col-md-2"><a href="https://linkedin.com/in/{{ .Site.Params.linkedin }}">LinkedIn</a></div>
             {{ end }}
-            {{ if .Site.Params.twitter }}
-            <div class="col-xs-3 col-md-2"><a href="https://twitter.com/{{ .Site.Params.twitter }}">Twitter</a></div>
+            {{ if .Site.Params.xing }}
+            <div class="col-xs-3 col-md-2"><a href="https://xing.com/profile/{{ .Site.Params.xing }}">Xing</a></div>
             {{ end }}
             {{ if or (.Site.Params.copyright) (.Site.Params.credit) }}
-            <div class="col-xs-12">
+            <div class="col-xs-12 copyright">
+                <div><a href="/page/imprint/">Impressum & Datenschutz</a></div>
                 {{ if .Site.Params.copyright }}
-                Copyright &copy; {{ now.Format "2006" }} {{ .Site.Title }}.
+                &copy; {{ now.Format "2006" }} {{ .Site.Title }}. 
                 {{ end }}
                 {{ if .Site.Params.credit }}
-                Theme developed by <a href="https://tomanistor.com">Toma Nistor</a>.
+                <div>Basierend auf einem Theme von <a href="https://tomanistor.com">Toma Nistor</a>.</div>
                 {{ end }}
             </div>
             {{ end }}
             <!-- Scripts -->
             <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-            {{ if .IsHome }}
-            <script src="/scripts/{{ if .Site.Params.cacheBustJS }}{{ index .Site.Data.cachedAssets "index.js" }}{{ else }}index.js{{ end }}" type="text/javascript"></script>
+            {{ if .IsHome }} 
+            <script src="/js/{{ if .Site.Params.cacheBustJS }}{{ index .Site.Data.js.hash "index.js" }}{{ else }}index.js{{ end }}" type="text/javascript"></script>
             {{ if .Site.Params.ajaxFormspree }}
             <!-- Formspree AJAX -->
             <script>
@@ -66,7 +67,7 @@
             </script>
             {{ end }}
             {{ else }}
-            <script src="/scripts/{{ if .Site.Params.cacheBustJS }}{{ index .Site.Data.cachedAssets "main.js" }}{{ else }}main.js{{ end }}" type="text/javascript"></script>
+            <script src="/js/{{ if .Site.Params.cacheBustJS }}{{ index .Site.Data.js.hash "main.js" }}{{ else }}main.js{{ end }}" type="text/javascript"></script>
             {{ end }}
             <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
         </footer>
