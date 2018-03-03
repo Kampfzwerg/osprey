@@ -1,0 +1,17 @@
+{
+  "name": "osprey-redbow",
+  "version": "1.0.0",
+  "description": "fork of osprey theme",
+  "main": "index.html",
+  "repository": "git@github.com:Kampfzwerg/osprey.git",
+  "author": "Kampfzwerg <janadeppe@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-hash": "^4.2.2",
+    "gulp-sass": "^3.1.0"
+  }
+}
