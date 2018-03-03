@@ -10,6 +10,17 @@ $storm: #4E6B6C;
 $smoke: #F7F7F7;
 $accent: #DA784D;
 
+$primary-color: #fafafa;
+$primary-light: #fff;
+$primary-dark: #c7c7c7;
+
+$secondary-color: #7b1fa2;
+$secondary-light: #ae52d4;
+$secondary-dark: #4a0072;
+
+$font-color: #000000;
+$font-color-secondary: #ffffff;
+
 // Fonts
 $font-header: 'Julius Sans One', "Roboto Slab", "Cambria", Georgia, serif;
 $font-body: 'Roboto Slab', "Poppins", "Hel­vetica", Arial, sans-serif;
@@ -89,7 +100,7 @@ $breakpoint-small: 25em; // 400px
   vertical-align: baseline;
   margin: 0;
   padding: 0;
-  color: $black;
+  color: $font-color;
   &:before, &:after {
     box-sizing: border-box;
   }
@@ -102,7 +113,8 @@ body {
   @include size(p);
   font-family: $font-body;
   line-height: $base-line-height;
-  color: $black;
+  color: $font-color;
+  background: $primary-color;
 }
 header {
   height: 100vh;
@@ -160,13 +172,13 @@ nav {
   width: 100vw;
   right: -100vw;
   height: 100%;
-  background-color: $black;
+  background-color: $secondary-color;
   transform: translate(0px, 0px);
   transition: 0.25s ease-out;
   a {
-    color: #FFF;
+    color: $font-color-secondary;
     &:hover {
-      color: $accent;
+      color: $primary-color;
     }
   }
 }
@@ -224,10 +236,11 @@ q {
 a {
   text-decoration: none;
   transition: color .2s ease-out;
+  color: $secondary-color
   img {
     border: none;
   }
-  &:hover { color: $accent }
+  &:hover { color: $secondary-dark }
 }
 img {
   margin: 0 auto;
@@ -236,7 +249,7 @@ img {
 }
 pre {
   font: 12px "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
-  background-color: $smoke;
+  background-color: $primary-dark;
   margin-top: 0;
   margin-bottom: $vertical-rhythm;
   word-wrap: normal;
@@ -271,7 +284,7 @@ pre {
 code {
   font-family: $font-code;
   font-size: 90%;
-  background-color: $smoke;
+  background-color: $primary-dark;
   padding: 4px;
 }
 .sans {
@@ -319,7 +332,6 @@ blockquote {
 }
 .sub-header, time {
   @include size(p);
-  color: $storm;
   margin-bottom: $vertical-rhythm;
 }
 .content {
@@ -377,7 +389,7 @@ blockquote {
 }
 .about {
   width: 100%;
-  background-color: $smoke;
+  background-color: $primary-light;
   padding-bottom: $vertical-rhythm * 2;
   p {
     @include size(h3);
@@ -438,11 +450,10 @@ blockquote {
   width: 100%;
   opacity: 0;
   transition: .2s ease-out;
-  background-color: $black;
+  background-color: $primary-dark;
   a {
-    color: #FFF;
     &:hover {
-      color: $accent;
+      color: $secondary-color;
     }
   }
   h2 {
@@ -461,7 +472,7 @@ blockquote {
 }
 .contact {
   width: 100%;
-  background-color: $smoke;
+  background-color: $primary-light;
   padding-bottom: $vertical-rhythm * 2;
   form {
     margin-top: $vertical-rhythm;
@@ -472,22 +483,22 @@ blockquote {
   }
 }
 input {
-  background-color: #FFF;
-  border-color: $smoke;
-  border-radius: 3px;
-  border-width: 1px;
+  background-color: $primary-color;
+  border-color: $primary-dark;
+  border-width: 2px;
   border-style: solid;
-  color: $black;
+  color: $font-color;
   padding: 10px;
   margin: 8px 0;
   width: 100%;
   &[type="submit"] {
-    background-color: $storm;
-    color: #FFF;
+    border: none;
+    background-color: $secondary-color;
+    color: $font-color-secondary;
     transition: .2s ease-out;
     &:hover {
-      background-color: $accent;
-      color: #FFF;
+      background-color: $secondary-dark;
+      color: $font-color-secondary;
       cursor: pointer;
     }
   }
@@ -499,9 +510,8 @@ textarea {
 }
 footer {
   height: $vertical-rhythm * 5;
-  background-color: $black;
+  background-color: $primary-dark;
   div, a {
-    color: #FFF;
   }
 }
 .copyright {
