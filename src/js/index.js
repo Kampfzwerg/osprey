@@ -6,22 +6,9 @@ $(document).ready(function() {
         var scrollPosition = $(this).scrollTop();
         if( scrollPosition > $(this).height() - $("nav").height() ) {
             $("nav").addClass("nav-fixed");
-            //$("nav > div.logo").css('visibility','visible').fadeIn();
-            //$("nav > div.nav-toggle").css('visibility','visible').fadeIn();
         } else {
             $("nav").removeClass("nav-fixed");
-            //$("nav > div.logo").css('visibility','hidden').fadeOut();
-            //$("nav > div.nav-toggle").css('visibility','hidden').fadeOut();
         }
-        // // TODO Active nav link changes on scroll
-        // $(".section").each(function() {
-        //     var target = $(this).offset().top;
-        //     var id = $(this).attr("id");
-        //     if( scrollPosition >= target ) {
-        //         $("nav > div > h3 > a").removeClass("active");
-        //         $("nav > div > h3 > a[href=#" + id + "]").addClass("active");
-        //     }
-        // });
     });
 
     // Full screen nav open on click
@@ -29,6 +16,7 @@ $(document).ready(function() {
         $(".nav-full").toggleClass("active");
         $("main").toggleClass("active");
         $(this).find("img").toggle();
+        $("nav").toggleClass("nav-full-active");
     });
 
     // Full screen nav close on click
