@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto+Slab:300&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto+Slab:300,700&subset=latin-ext');
 @import "flexboxgrid";
 
 // TODO: Cleanup
@@ -8,13 +8,13 @@
 $black: #212121;
 $storm: #4E6B6C;
 $smoke: #F7F7F7;
-$accent: #DA784D;
+$accent: #7b1fa2;
 
 $primary-color: #fafafa;
 $primary-light: #fff;
 $primary-dark: #c7c7c7;
 
-$secondary-color: #7b1fa2;
+$secondary-color: $accent;
 $secondary-light: #ae52d4;
 $secondary-dark: #4a0072;
 
@@ -35,19 +35,22 @@ $font-scale-large: (
 h1: 2.961rem,
 h2: 2.221rem,
 h3: 1.666rem,
-p: 1.25rem
+p: 1.25rem,
+small: 1rem,
 );
 $font-scale-medium: (
 h1: 2.441rem,
 h2: 1.953em,
 h3: 1.563rem,
 p: 1.25rem,
+small: 1rem,
 );
 $font-scale-small: (
 h1: 2.148rem,
 h2: 1.719rem,
 h3: 1.375rem,
-p: 1.1rem
+p: 1.1rem,
+small: .875rem,
 );
 
 $base-line-height: 1.6;
@@ -136,7 +139,6 @@ nav {
     font-family: $font-body;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 600;
   }
   img {
     display: inline-block;
@@ -200,6 +202,9 @@ main.active {
 }
 p {
   margin-bottom: $vertical-rhythm;
+  small {
+    @include size(small);
+  }
   code {
     font-family: $font-code;
   }
@@ -246,6 +251,13 @@ img {
   margin: 0 auto;
   max-width: 100%;
   display: block;
+}
+figure {
+  margin: 0 0 2rem;
+  figcaption {
+    @include size(small);
+    margin-top: .3rem;
+  }
 }
 pre {
   font: 12px "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
@@ -392,7 +404,6 @@ blockquote {
   background-color: $primary-light;
   padding-bottom: $vertical-rhythm * 2;
   p {
-    @include size(h3);
     margin-top: $vertical-rhythm;
   }
   a {
@@ -435,6 +446,10 @@ blockquote {
     &:hover .overlay {
       opacity: 1;
     }
+  }
+  >.row>div[class^="col-"], >.row>div[class*=" col-"] {
+    display: flex;
+    align-items: center;
   }
   img {
     padding: $vertical-rhythm * 3;
@@ -503,6 +518,30 @@ input {
     }
   }
 }
+//
+// Mailchimp overwrites
+//--------------------------------------------
+
+#mc_embed_signup {
+  form {
+    padding: 0;
+  }
+
+  div#mce-responses {
+    margin: 0;
+    padding: 0;
+  }
+
+  div.response {
+    margin: 0;
+    padding: 0 0 1rem;
+  }
+}
+
+#mc-embedded-subscribe {
+  margin: 0;
+}
+
 textarea {
   @extend input;
   min-height: $vertical-rhythm * 4;
