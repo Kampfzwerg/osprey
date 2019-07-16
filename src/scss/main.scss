@@ -33,7 +33,7 @@ $font-code: "Menlo", "Monaco", "Andale Mono", "lucida console", "Courier New", m
 
 $font-scale-large: (
 h1: 2.961rem,
-h2: 2.221rem,
+h2: 2rem,
 h3: 1.666rem,
 p: 1.25rem,
 small: 1rem,
@@ -321,23 +321,39 @@ ul li {
 %blockquote {
   font-family: $font-header;
   content: '\201C';
-  font-size: 35px;
+  font-size: 50px;
   color: $accent;
+  position: absolute;
+  display: block;
 }
 blockquote {
   font-family: $font-header;
   text-align: center;
   padding: 25px;
+  position: relative;
   p {
     display: inline-block;
     font-style: italic;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  cite {
+    display: block;
+    font-size: 16px;
+    font-family: $font-body;
+    margin-top: .5rem;
   }
   &:before {
     @extend %blockquote;
+    top: 0;
+    left: 0;
   }
   &:after {
     @extend %blockquote;
     content: '\201D';
+    bottom: 0;
+    right: 0;
   }
 }
 .posts-list {
